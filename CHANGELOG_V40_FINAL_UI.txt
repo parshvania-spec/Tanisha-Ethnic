@@ -1,0 +1,10 @@
+TANISHA ETHNIC V40 FINAL LAUNCH UI
+
+FINAL MOBILE POLISH
+- Reduced mobile hero/banner height for a balanced first screen.
+- Restored Tanisha Ethnic brand name beside the round header logo.
+- Improved header spacing and alignment on small Android screens.
+- Positioned cart count badge directly on the cart icon.
+- Updated cache/version references to V40.
+
+All V39 product gallery, zoom, swipe, badges, recently viewed, share, delivery, related products, persistence, search suggestions, admin image tools, PWA and SEO features are retained.
