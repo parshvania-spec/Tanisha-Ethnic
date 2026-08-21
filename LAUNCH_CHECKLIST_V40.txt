@@ -1,0 +1,29 @@
+TANISHA ETHNIC V40 — FINAL LAUNCH CHECKLIST
+
+STATIC CHECKS COMPLETED
+- JavaScript syntax checked: app.js, admin.js, config.js, menu.js, service-worker.js
+- All local launch assets return HTTP 200 from a local static server.
+- Supabase project URL and publishable key are present in config.js.
+- Netlify publish directory is repository root.
+- Cache headers disable stale HTML/JS/CSS/service-worker caching.
+- Product gallery, wishlist, cart, coupons, reviews, videos, offers, admin login and PWA code are present.
+
+SUPABASE ONE-TIME CHECK
+1. Open the connected Supabase project: cxydymcjgxgcdqgltnii.
+2. Run setup.sql in SQL Editor once. It is designed to be safe to re-run.
+3. Confirm Authentication has the admin user you want to use.
+4. Confirm Storage buckets: product-images, review-images, store-videos.
+5. Do NOT put a service_role key in config.js. Only the publishable key belongs in the browser.
+
+GITHUB / NETLIFY
+1. Extract this ZIP.
+2. Replace the files in the GitHub repository ROOT with all files from this ZIP.
+3. Commit and push.
+4. Netlify should auto-deploy the repository root.
+5. After deploy, open the site with ?v40=1 once and hard-refresh.
+6. If an old PWA is installed, uninstall it and install the new version again.
+7. Open /admin.html?v40=1 and sign in with the Supabase Authentication admin account.
+
+IMPORTANT
+- The current environment cannot push to the user's GitHub repository or run Supabase SQL on their account.
+- The ZIP is therefore prepared and verified locally; the final account-level deploy/SQL execution must be done in the connected GitHub/Supabase accounts.

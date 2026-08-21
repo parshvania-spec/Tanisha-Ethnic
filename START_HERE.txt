@@ -1,11 +1,11 @@
-TANISHA ETHNIC V32 PREMIUM FINAL
+TANISHA ETHNIC V40 FINAL LAUNCH UI
 
 1. GitHub repository root me is folder ki SAARI files upload/replace karein.
-2. Commit message: Tanisha Ethnic V32 premium final
+2. Commit message: Tanisha Ethnic V40 final launch
 3. Netlify Published hone ka wait karein.
 4. Chrome > Site settings > tanishaethnics.netlify.app > Clear & reset.
-5. Website open karein: /?v32=1
-6. Admin open karein: /admin.html?v32=1
+5. Website open karein: /?v40=1
+6. Admin open karein: /admin.html?v40=1
 
 IMPORTANT
 - Supabase project: cxydymcjgxgcdqgltnii
