@@ -29,16 +29,104 @@ const updateProductUrl=id=>{const u=new URL(location.href);if(id)u.searchParams.
 function openSharedProduct(){const id=new URLSearchParams(location.search).get('product');if(id&&products.some(p=>String(p.id)===String(id)))openProduct(id,true)}
 function setWishlist(list){localStorage.setItem('te_wishlist_v3',JSON.stringify([...new Set(list.map(String))]));renderAll();renderWishlist();updateModalWish()}
 function toggleWish(id){const s=String(id),w=wishlist();const added=!w.includes(s);setWishlist(added?[...w,s]:w.filter(x=>x!==s));toast(added?'Added to wishlist':'Removed from wishlist')}
-async function loadStore(){el('statusText').textContent='Loading products…';const [s,o,p,r,v,c]=await Promise.all([
-  supabaseClient.from('site_settings').select('*').order('id').limit(1).maybeSingle(),
-  supabaseClient.from('offers').select('*').eq('active',true).order('created_at',{ascending:false}),
-  supabaseClient.from('products').select('*').eq('active',true).order('featured',{ascending:false}).order('created_at',{ascending:false}),
-  supabaseClient.from('reviews').select('*').eq('approved',true).order('created_at',{ascending:false}).limit(12),
-  supabaseClient.from('videos').select('*').eq('active',true).order('created_at',{ascending:false}),
-  supabaseClient.from('coupons').select('*').eq('active',true).order('created_at',{ascending:false})
-]);
-if(s.data)storeSettings={...storeSettings,...s.data};storeSettings.store_name='Tanisha Ethnic';if(!storeSettings.announcement_text||/Tanisha Ethnic/i.test(storeSettings.announcement_text))storeSettings.announcement_text='Welcome to Tanisha Ethnic';offers=o.data||[];products=p.data||[];reviews=r.data||[];videos=(v&&v.data)||[];coupons=(c&&c.data)||[];applySettings();renderHero();renderAll();renderWishlist();renderReviews();renderVideos(v&&v.error);restoreCouponInput();el('statusText').textContent=p.error?`Products load nahi hue: ${p.error.message}`:products.length?'':'Abhi koi product add nahi kiya gaya hai.';openSharedProduct()}
+async function loadStore(){
+  const status=el('statusText');
+  if(status) status.textContent='Loading products…';
 
+  try{
+    const results=await Promise.allSettled([
+      supabaseClient.from('site_settings').select('*').order('id').limit(1).maybeSingle(),
+      supabaseClient.from('offers').select('*').eq('active',true).order('created_at',{ascending:false}),
+      supabaseClient.from('products').select('*').eq('active',true).order('featured',{ascending:false}).order('created_at',{ascending:false}),
+      supabaseClient.from('reviews').select('*').eq('approved',true).order('created_at',{ascending:false}).limit(12),
+      supabaseClient.from('videos').select('*').eq('active',true).order('created_at',{ascending:false}),
+      supabaseClient.from('coupons').select('*').eq('active',true).order('created_at',{ascending:false})
+    ]);
+
+    const value=i=>results[i]?.status==='fulfilled'
+      ? results[i].value
+      : {data:null,error:results[i]?.reason||new Error('Request failed')};
+
+    const s=value(0);
+    const o=value(1);
+    const p=value(2);
+    const r=value(3);
+    const v=value(4);
+    const c=value(5);
+
+    if(s.data) storeSettings={...storeSettings,...s.data};
+
+    storeSettings.store_name='Tanisha Ethnic';
+
+    if(
+      !storeSettings.announcement_text ||
+      /Tanisha Ethnic/i.test(storeSettings.announcement_text)
+    ){
+      storeSettings.announcement_text='Welcome to Tanisha Ethnic';
+    }
+
+    offers=o.data||[];
+    products=p.data||[];
+    reviews=r.data||[];
+    videos=v.data||[];
+    coupons=c.data||[];
+
+    applySettings();
+    renderHero();
+
+    try{
+      renderAll();
+      renderWishlist();
+      renderReviews();
+      renderVideos(v.error);
+      restoreCouponInput();
+    }catch(renderError){
+      console.error(
+        'Tanisha Ethnic render error:',
+        renderError
+      );
+
+      if(status){
+        status.textContent=
+          `Website render error: ${
+            renderError.message||renderError
+          }`;
+      }
+
+      return;
+    }
+
+    if(status){
+      if(p.error){
+        status.textContent=
+          `Products load nahi hue: ${
+            p.error.message||p.error
+          }`;
+      }else if(products.length){
+        status.textContent='';
+      }else{
+        status.textContent=
+          'Abhi koi product add nahi kiya gaya hai.';
+      }
+    }
+
+    openSharedProduct();
+
+  }catch(error){
+
+    console.error(
+      'Tanisha Ethnic store loading error:',
+      error
+    );
+
+    if(status){
+      status.textContent=
+        `Store load error: ${
+          error.message||error
+        }`;
+    }
+  }
+}
 function renderVideos(error){
   const grid=el('videoGrid'); if(!grid)return;
   const cta=el('videoInstagramCta'); if(cta)cta.href=storeSettings.instagram_url||'https://www.instagram.com/tanisha.ethnic/';
