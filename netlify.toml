@@ -1,3 +1,4 @@
+# Tanisha Ethnic — force fresh Netlify deployment after live-source sync
 [build]
   publish = "."
 
