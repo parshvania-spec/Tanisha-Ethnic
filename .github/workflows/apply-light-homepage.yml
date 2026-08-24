@@ -1,8 +1,6 @@
 name: Apply Light Premium Homepage
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -10,73 +8,43 @@ permissions:
 
 jobs:
   apply-light-homepage:
-    if: ${{ !contains(github.event.head_commit.message, '[light-homepage-applied]') }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Apply light premium homepage theme
+      - name: Apply approved light premium theme
         shell: bash
         run: |
           cat >> styles.css <<'EOF'
 
-/* Light Premium Homepage — approved Tanisha Ethnic concept */
-:root{--vLight-ivory:#fffaf3;--vLight-cream:#f8efe5;--vLight-paper:#fffdf9;--vLight-brown:#4b2b1c;--vLight-brown2:#6b4328;--vLight-gold:#b88943;--vLight-line:#ead9c7}
-body{background:var(--vLight-ivory);color:var(--vLight-brown)}
-.offerBar{background:linear-gradient(90deg,#f4e7d8,#fffaf3,#f4e7d8);color:#70461f;border-bottom:1px solid #ead9c7}
-.siteHeader{background:rgba(255,253,249,.96);border-bottom:1px solid var(--vLight-line);box-shadow:0 8px 24px rgba(75,43,28,.06)}
+/* Approved Light Premium Homepage */
+:root{--light-ivory:#fffaf3;--light-paper:#fffdf9;--light-cream:#f8efe5;--light-brown:#4b2b1c;--light-gold:#b88943;--light-line:#ead9c7}
+body{background:var(--light-ivory);color:var(--light-brown)}
+.offerBar{background:linear-gradient(90deg,#f4e7d8,#fffaf3,#f4e7d8);color:#70461f;border-bottom:1px solid var(--light-line)}
+.siteHeader{background:rgba(255,253,249,.97);border-bottom:1px solid var(--light-line);box-shadow:0 8px 24px rgba(75,43,28,.06)}
 .siteHeader nav a{color:#5a3825}
-.contactStrip{background:var(--vLight-line)}
-.contactStrip>a{background:#fffdf9}
-.contactIcon{background:#f5eadf;color:var(--vLight-brown)}
-.heroSlider{min-height:590px;background:#f6ede3;border-bottom:1px solid var(--vLight-line)}
-.slide{color:var(--vLight-brown);background:linear-gradient(90deg,#fffaf3 0%,#f7eee4 54%,#efe0d1 100%);grid-template-columns:1.05fr .95fr}
-.slide:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,250,243,.22),transparent 62%);pointer-events:none}
-.slideText small,.sectionHeading small,.shopHead small{color:#9b6d34}
-.slide h1{color:#5a351e;text-shadow:none;font-size:68px;letter-spacing:-1px}
+.heroSlider{background:#f6ede3;border-bottom:1px solid var(--light-line)}
+.slide{color:var(--light-brown);background:linear-gradient(90deg,#fffaf3,#f7eee4 54%,#efe0d1)}
+.slide h1{color:#5a351e;text-shadow:none}
 .slide p{color:#684b38}
-.heroActions .primaryBtn{background:linear-gradient(135deg,#a97530,#c89b50);color:#fffaf3;box-shadow:0 10px 24px rgba(115,72,32,.16)}
+.heroActions .primaryBtn{background:linear-gradient(135deg,#a97530,#c89b50);color:#fffaf3}
 .heroActions .secondaryBtn{background:#fffdf9;border-color:#bfa27f;color:#6a4426}
-.heroLink{color:#6a4426;border-color:#bfa27f}
-.slideVisual img{filter:drop-shadow(0 24px 38px rgba(73,43,27,.18))}
-.heroGlow{background:radial-gradient(circle,#d7b27a55,transparent 68%)}
-.sliderBtn{border-color:#bfa27f;background:#fff8;color:#6a4426}
-.slideDots button{background:#b99b79}.slideDots button.active{background:#7b542e}
-.trustRow{background:#fffdf9;border-bottom:1px solid var(--vLight-line)}
-.trustRow div{border-color:var(--vLight-line)}
-.trustRow small{color:#806250}
-.section{background:var(--vLight-ivory)}
-.section.soft{background:#f8efe5}
-.sectionHeading h2,.shopHead h2{color:#4b2b1c}
-.sectionHeading>a{color:#76502e}
-.productCard{background:#fffdf9;border-color:#ead9c7;box-shadow:0 10px 26px rgba(75,43,28,.07)}
+.trustRow{background:#fffdf9;border-bottom:1px solid var(--light-line)}
+.section{background:var(--light-ivory)}
+.section.soft,.wishlistSection{background:var(--light-cream)}
+.productCard{background:var(--light-paper);border-color:var(--light-line);box-shadow:0 10px 26px rgba(75,43,28,.07)}
 .productCard:hover{box-shadow:0 18px 38px rgba(75,43,28,.12)}
-.imageWrap>img{background:#f3e6da}
-.badge{background:linear-gradient(135deg,#7a4d28,#b07a38)}
-.discount{background:#a84f4f}
-.wishBtn{background:#fffdf9;border-color:#e3d0bc;color:#704526}
-.cardBody h3{color:#4e2d1d}
+.wishBtn{background:var(--light-paper);border-color:#e3d0bc;color:#704526}
 .addCartBtn{background:linear-gradient(135deg,#f6e9db,#ead8c4);border-color:#d4b897;color:#5a341f}
-.cardActions .primaryBtn{background:#6a4126}
-.categories button{background:#fffdf9;border-color:#d9c2a8;color:#604027}.categories button.active{background:#6a4126}
-.fabricSection{background:linear-gradient(180deg,#fffaf4,#f6e9dd)}
-.fabricButtons button{background:#fffdf9;border-color:#e5d2bd}
-.fabricButtons button span{background:linear-gradient(135deg,#6d4225,#b8843e)}
-.darkSection{background:linear-gradient(135deg,#f2e2d2,#ead3bc);color:#4b2b1c}
-.darkSection .sectionHeading small,.darkSection .sectionHeading a{color:#7b542e}
-.darkSection .productCard{color:#4b2b1c}
-.wishlistSection{background:#f8efe5}
-.reviewsSection{background:#fffdf9}
-.reviewCard{background:#fffaf4;border-color:#ead9c7}
-footer{background:linear-gradient(145deg,#2b1710,#4b291a);border-top:2px solid #b88943}
-.floatingWa{box-shadow:0 12px 28px rgba(35,17,8,.2)}
-@media(max-width:900px){.slide{background:linear-gradient(180deg,#fffaf3 0%,#f5e8dc 100%);padding-top:42px}.slideText{padding-left:18px}.slide h1{font-size:52px}.slideVisual{opacity:1}.heroSlider{min-height:680px}}
-@media(max-width:560px){.heroSlider{min-height:640px}.slide{padding:34px 14px 56px}.slideText{padding:0 26px 0 10px}.slide h1{font-size:39px}.slideVisual img{width:min(94%,360px)}}
+.categories button{background:var(--light-paper);border-color:#d9c2a8;color:#604027}.categories button.active{background:#6a4126}
+.reviewsSection{background:var(--light-paper)}
+.reviewCard{background:#fffaf4;border-color:var(--light-line)}
+@media(max-width:900px){.slide{background:linear-gradient(180deg,#fffaf3,#f5e8dc);padding-top:42px}.slide h1{font-size:52px}.slideVisual{opacity:1}.heroSlider{min-height:680px}}
+@media(max-width:560px){.heroSlider{min-height:640px}.slide{padding:34px 14px 56px}.slide h1{font-size:39px}.slideVisual img{width:min(94%,360px)}}
 EOF
-
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add styles.css
-          git commit -m "feat: apply light premium homepage [light-homepage-applied]"
+          if git diff --cached --quiet; then echo "Light theme already applied"; exit 0; fi
+          git commit -m "feat: apply approved light premium homepage"
           git push
