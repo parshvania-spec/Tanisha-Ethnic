@@ -1,70 +1,23 @@
-name: Apply Premium Luxury UI
+name: Premium Luxury UI Check
 
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  premium-ui:
-    if: github.actor != 'github-actions[bot]'
+  premium-ui-check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Apply premium luxury storefront styling
+      - name: Verify storefront styling
         shell: bash
         run: |
-          if grep -q "TANISHA_PREMIUM_LUXURY_V1" styles.css; then
-            echo "Premium luxury styling already applied."
-            exit 0
-          fi
-
-          cat >> styles.css <<'CSS'
-
-/* TANISHA_PREMIUM_LUXURY_V1 */
-:root{
-  --ink:#24150f;
-  --brown:#2b1710;
-  --brown2:#4a2a1d;
-  --gold:#c59a5b;
-  --gold2:#e3c18a;
-  --cream:#fffaf4;
-  --soft:#f4e8dc;
-  --line:#e5d4c3;
-  --shadow:0 22px 60px rgba(43,23,16,.13);
-}
-body{background:linear-gradient(180deg,#fffaf4 0%,#fffdf9 45%,#f8eee5 100%);color:var(--ink)}
-.offerBar{background:linear-gradient(90deg,#170b07,#4b281b 48%,#170b07);letter-spacing:1.1px;text-transform:uppercase;font-size:11px;padding:11px 16px}
-.siteHeader{min-height:86px;background:rgba(255,250,244,.94);border-bottom:1px solid rgba(197,154,91,.22);box-shadow:0 8px 30px rgba(43,23,16,.05)}
-.brand b,.cardBody h3,.sectionHeading h2,.shopHead h2,.productDetails h2,.cartHead h2,.slide h1{font-family:'Playfair Display',Georgia,serif}
-.brand b{letter-spacing:1.8px;font-size:16px}.brand small{letter-spacing:.7px;color:#9b795d}
-.primaryBtn{background:linear-gradient(135deg,#2b1710,#513020);border:1px solid rgba(227,193,138,.28);box-shadow:0 8px 20px rgba(43,23,16,.12)}
-.primaryBtn:hover{background:linear-gradient(135deg,#4a2a1d,#2b1710);transform:translateY(-1px)}
-.secondaryBtn{background:#fffaf5;border-color:#d7bfa5}
-.contactStrip{background:#e9dacb;border-color:#e9dacb}.contactStrip>a{background:#fffdf9;transition:.2s}.contactStrip>a:hover{background:#fff7ee;color:#5a3422}.contactIcon{background:#f5e6d5;color:#6a4029;border:1px solid #ead4bd}
-.heroSlider{min-height:650px;background:#190c08}.slide{padding:78px 8%;background:radial-gradient(circle at 76% 32%,rgba(227,193,138,.22),transparent 24%),radial-gradient(circle at 70% 100%,rgba(197,154,91,.12),transparent 32%),linear-gradient(115deg,#170a06,#4a281c 58%,#25120c)}
-.slide h1{font-size:72px;letter-spacing:-1px}.slideText small{letter-spacing:3px;color:#e3c18a}.slide p{color:#f8e9da}.heroGlow{background:radial-gradient(circle,rgba(227,193,138,.32),transparent 66%)}
-.trustRow{background:#fffdf9;border-bottom:1px solid #eadaca}.trustRow b{font-family:'Playfair Display',Georgia,serif;font-size:15px}.trustRow small{font-size:11px;letter-spacing:.3px}
-.section{padding:82px 5.5%}.section.soft{background:linear-gradient(180deg,#f5e9de,#fbf4ed)}
-.sectionHeading{margin-bottom:32px}.sectionHeading small,.shopHead small{letter-spacing:3px;color:#a67a48}.sectionHeading h2,.shopHead h2{font-size:48px;letter-spacing:-.4px}
-.productGrid{gap:24px}.productCard{border-radius:4px;border:1px solid #ead9c8;background:#fffdf9;box-shadow:0 10px 35px rgba(43,23,16,.07);transition:transform .3s ease,box-shadow .3s ease}.productCard:hover{transform:translateY(-7px);box-shadow:0 24px 55px rgba(43,23,16,.15)}
-.imageWrap>img{background:#f0e3d7}.wishBtn{background:rgba(255,253,249,.96);border-color:#ead7c4}.cardBody{padding:19px}.cardBody>small{color:#a17857;letter-spacing:1.5px}.cardBody h3{font-size:23px}.price{color:#2b1710;font-family:'Playfair Display',Georgia,serif}.cardRating{color:#b88335;font-size:12px;margin-top:8px;letter-spacing:1px}.cardRating span{color:#8d7768;letter-spacing:0}.addCartBtn{background:linear-gradient(135deg,#f4e7da,#ead6c3);border-color:#d7b99c}.addCartBtn:hover{background:#dfc5aa}
-.categories button,.fabricButtons button{background:#fffdf9;border-color:#d9c1aa;transition:.2s}.categories button.active,.categories button:hover,.fabricButtons button.active,.fabricButtons button:hover{background:#2b1710;color:#fff;box-shadow:0 8px 20px rgba(43,23,16,.14)}
-.shopSection{background:#fffdf9}.filters input,.filters select{background:#fff;border-color:#dcc8b4}.filters input:focus,.filters select:focus{outline:2px solid rgba(197,154,91,.2);border-color:#b98c58}
-.wishlistSection{background:linear-gradient(180deg,#f7ece2,#fff8f2)}
-.reviewCard{background:#fffaf4;border-color:#ead9c8;box-shadow:0 8px 25px rgba(43,23,16,.05)}
-footer{background:linear-gradient(135deg,#170b07,#2b1710);border-top:1px solid rgba(227,193,138,.2)}
-.modalCard{border-radius:8px;box-shadow:0 30px 90px #0007}.gallery{background:#f4e7da}.productDetails{background:#fffdf9}.detailGrid p{background:#fff8f1;border-color:#ead8c6}
-.floatingWa{box-shadow:0 14px 35px rgba(0,0,0,.25);border:2px solid rgba(255,255,255,.7)}
-@media(max-width:600px){.section{padding:58px 4.5%}.sectionHeading h2,.shopHead h2{font-size:36px}.slide h1{font-size:46px;line-height:1.05}.heroSlider{min-height:620px}.productCard{border-radius:6px}.cardBody{padding:15px}.cardBody h3{font-size:20px}.brand b{font-size:13px}}
-CSS
-
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add styles.css
-          git commit -m "feat: premium luxury Tanisha Ethnic storefront UI" || exit 0
-          git push
+          test -f styles.css
+          grep -q "Premium V5 permanent logo and SVG icon system" styles.css
+          echo "Premium Luxury UI is present."
