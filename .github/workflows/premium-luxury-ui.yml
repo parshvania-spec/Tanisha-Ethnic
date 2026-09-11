@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   premium-ui-check:
@@ -19,5 +19,29 @@ jobs:
         shell: bash
         run: |
           test -f styles.css
+          test -f premium-light.css
           grep -q "Premium V5 permanent logo and SVG icon system" styles.css
           echo "Premium Luxury UI is present."
+
+      - name: Apply light luxury layer
+        shell: bash
+        run: |
+          if ! grep -q "premium-light.css" styles.css; then
+            printf '\n/* Premium Light Luxury Layer */\n@import url("premium-light.css?v=1");\n' >> styles.css
+          fi
+          if grep -q 'meta name="theme-color" content="#120806"' index.html; then
+            sed -i 's/meta name="theme-color" content="#120806"/meta name="theme-color" content="#fffaf5"/' index.html
+          fi
+
+      - name: Commit applied theme
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "No theme changes needed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add styles.css index.html
+          git commit -m "Apply premium light luxury storefront theme"
+          git push
