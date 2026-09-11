@@ -1,0 +1,77 @@
+/* Tanisha Ethnic — Premium Light Luxury layer */
+:root{
+  --lux-ivory:#fffaf5;
+  --lux-cream:#f8efe6;
+  --lux-sand:#ead9c7;
+  --lux-gold:#b7874f;
+  --lux-gold-soft:#d8b98d;
+  --lux-ink:#2b1b15;
+}
+
+/* Light luxury hero */
+.heroSlider{
+  background:linear-gradient(135deg,#fffaf5 0%,#f8efe6 58%,#efe0d1 100%) !important;
+  color:var(--lux-ink) !important;
+  border-bottom:1px solid rgba(183,135,79,.18);
+}
+.heroSlider .slide{
+  color:var(--lux-ink) !important;
+  background:
+    radial-gradient(circle at 78% 28%,rgba(183,135,79,.18),transparent 27%),
+    radial-gradient(circle at 18% 80%,rgba(255,255,255,.85),transparent 35%),
+    linear-gradient(120deg,#fffaf5,#f5e8dc) !important;
+}
+.heroSlider .slideText small{color:#a36f35 !important;letter-spacing:.18em !important}
+.heroSlider .slide h1{color:var(--lux-ink) !important;text-shadow:none !important}
+.heroSlider .slide p{color:#624b3e !important}
+.heroSlider .heroLink{color:var(--lux-ink) !important;border-bottom-color:var(--lux-gold) !important}
+.heroSlider .sliderBtn{color:var(--lux-ink) !important;background:rgba(255,255,255,.72) !important;border-color:rgba(183,135,79,.28) !important;box-shadow:0 8px 25px rgba(43,27,21,.08)}
+.heroSlider .slideDots button{background:rgba(43,27,21,.22) !important}
+.heroSlider .slideDots button.active{background:var(--lux-gold) !important}
+.heroSlider .slideVisual img{filter:drop-shadow(0 24px 30px rgba(72,44,27,.16)) !important}
+
+/* Premium navigation and contact details */
+.offerBar{background:linear-gradient(90deg,#3a2118,#5a3825,#3a2118) !important;letter-spacing:.12em !important}
+.siteHeader{background:rgba(255,255,255,.96) !important;box-shadow:0 8px 28px rgba(58,33,24,.06) !important}
+.brand b{letter-spacing:.12em !important}
+.brand small{color:#9a744d !important}
+.contactStrip{background:#fffdf9 !important;border-bottom:1px solid rgba(183,135,79,.14) !important}
+
+/* Editorial section rhythm */
+.section{background:#fffdf9 !important}
+.section.soft{background:linear-gradient(180deg,#fbf3eb,#fffaf5) !important}
+.sectionHeading small,.shopHead small{color:#a36f35 !important;letter-spacing:.18em !important}
+.sectionHeading h2,.shopHead h2{color:var(--lux-ink) !important;letter-spacing:-.02em}
+.sectionHeading a{color:#7d5838 !important}
+
+/* High-end product cards */
+.productCard,.product-card,.productItem{
+  border-color:rgba(183,135,79,.16) !important;
+  box-shadow:0 10px 30px rgba(58,33,24,.055) !important;
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease !important;
+}
+.productCard:hover,.product-card:hover,.productItem:hover{
+  transform:translateY(-4px);
+  border-color:rgba(183,135,79,.32) !important;
+  box-shadow:0 18px 42px rgba(58,33,24,.10) !important;
+}
+.productCard img,.product-card img,.productItem img{background:#f8efe6 !important}
+
+/* Gold micro-details */
+button.primaryBtn,.primaryBtn{box-shadow:0 8px 20px rgba(58,33,24,.10)}
+.trustRow{background:#fff !important;border-top:1px solid rgba(183,135,79,.10);border-bottom:1px solid rgba(183,135,79,.10)}
+.trustRow svg{color:var(--lux-gold) !important}
+
+/* Mobile luxury spacing */
+@media (max-width:600px){
+  .heroSlider{min-height:430px !important}
+  .heroSlider .slide{padding:34px 18px 58px !important}
+  .heroSlider .slide h1{font-size:clamp(36px,10vw,52px) !important;line-height:1.02 !important}
+  .heroSlider .slide p{font-size:14px !important;line-height:1.6 !important;max-width:32ch}
+  .section{padding-top:42px !important;padding-bottom:42px !important}
+  .sectionHeading h2,.shopHead h2{font-size:30px !important}
+  .productCard,.product-card,.productItem{border-radius:16px !important}
+}
+
+/* Keep dark/trending storytelling section intentional */
+.darkSection{border-top:1px solid rgba(183,135,79,.22)}
