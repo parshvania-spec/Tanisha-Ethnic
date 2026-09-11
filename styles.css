@@ -678,3 +678,6 @@ body.noScroll .bottomNav{display:none!important}
   .slideVisual img{max-height:255px!important}
   .sliderBtn{bottom:60px!important}
 }
+
+/* Premium Light Luxury Layer */
+@import url("premium-light.css?v=1");
