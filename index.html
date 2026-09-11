@@ -21,6 +21,14 @@
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="preconnect" href="https://cxydymcjgxgcdqgltnii.supabase.co" crossorigin>
   <link rel="stylesheet" href="styles.css?v=40-final-ui">
+  <style id="mobile-contact-overflow-fix">
+    @media (max-width:600px){
+      .contactStrip>a{min-width:0;overflow:hidden}
+      .contactStrip>a>span:last-child{min-width:0;max-width:calc(100% - 44px);overflow:hidden}
+      .contactStrip strong,.contactStrip small{display:block;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+      .contactStrip strong{font-size:10px;letter-spacing:-.2px}
+    }
+  </style>
   <!-- Tanisha Ethnic V38 Final Launch Edition -->
   <script type="application/ld+json">
   {
