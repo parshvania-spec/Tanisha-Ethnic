@@ -75,3 +75,15 @@ button.primaryBtn,.primaryBtn{box-shadow:0 8px 20px rgba(58,33,24,.10)}
 
 /* Keep dark/trending storytelling section intentional */
 .darkSection{border-top:1px solid rgba(183,135,79,.22)}
+
+/* V41: editorial luxury homepage hierarchy */
+#newGrid .productCard{background:#fff}
+#bestGrid{grid-template-columns:repeat(4,minmax(0,1fr));align-items:stretch}
+#bestGrid .productCard:first-child{grid-column:span 2;display:grid;grid-template-columns:1.15fr .85fr}
+#bestGrid .productCard:first-child .imageWrap{min-height:100%;}
+#bestGrid .productCard:first-child .imageWrap>img{height:100%;aspect-ratio:auto;min-height:420px}
+#bestGrid .productCard:first-child .cardBody{display:flex;flex-direction:column;justify-content:center;padding:28px}
+#bestGrid .productCard:first-child .cardBody h3{font-size:25px}
+#bestGrid .productCard:first-child .cardActions{margin-top:auto}
+@media(max-width:900px){#bestGrid{grid-template-columns:repeat(2,minmax(0,1fr))}#bestGrid .productCard:first-child{grid-column:span 2;grid-template-columns:1fr 1fr}}
+@media(max-width:600px){#bestGrid .productCard:first-child{grid-column:span 2;display:block}#bestGrid .productCard:first-child .imageWrap>img{min-height:0;aspect-ratio:3/4}#bestGrid .productCard:first-child .cardBody{padding:15px}#bestGrid .productCard:first-child .cardBody h3{font-size:19px}}
