@@ -7,3 +7,5 @@ TANISHA ETHNIC — V40 FINAL LAUNCH UI
 5. Purana installed PWA uninstall karke Chrome se dobara Install app karein.
 6. setup.sql sirf tab run karein jab required tables/storage policies pehle run nahi ki gayi hon.
 7. Product edit me Current Images section se main image, order aur removal manage karein.
+
+Final audit refresh: 2026-10-03.
