@@ -300,3 +300,51 @@ button.primaryBtn,.primaryBtn{box-shadow:0 8px 20px rgba(58,33,24,.10)}
  .contactStrip{display:none!important}
  .heroSlider{margin-top:0}
 }
+
+
+/* V50 — Tanisha Ethnic Signature Luxury Finish */
+:root{
+  --te-brown:#351e16;
+  --te-brown-2:#4b2b20;
+  --te-gold:#c49a61;
+  --te-ivory:#fffaf4;
+  --te-muted:#725b4c;
+}
+body{background:var(--te-ivory)!important;color:var(--te-brown)!important}
+.offerBar{font-size:11px!important;font-weight:800!important;padding:9px 16px!important}
+.siteHeader{backdrop-filter:blur(16px)!important}
+.fashionQuickNav{background:#fffaf5!important;border-bottom:1px solid rgba(196,154,97,.16)!important}
+.fashionQuickNav a{font-weight:700!important;color:#604534!important}
+.heroSlider{border-radius:0 0 34px 34px!important;overflow:hidden!important;box-shadow:0 18px 55px rgba(53,30,22,.08)!important}
+.heroSlider .slideVisual{position:relative!important}
+.heroSlider .slideVisual:after{content:"TANISHA ETHNIC";position:absolute;right:8%;bottom:10%;font-size:11px;letter-spacing:.32em;color:rgba(53,30,22,.28);font-weight:800}
+.trustRow>div{padding:20px 14px!important}
+.sectionHeading h2,.shopHead h2{font-weight:800!important}
+.productGrid{gap:20px!important}
+.productCard,.product-card,.productItem{overflow:hidden!important;background:#fff!important}
+.productCard .cardBody,.product-card .cardBody,.productItem .cardBody{padding:16px!important}
+.primaryBtn{border-radius:999px!important;font-weight:800!important}
+.secondaryBtn{border-radius:999px!important}
+.darkSection{background:linear-gradient(135deg,#321d16,#4b2b20)!important;color:#fff8f0!important}
+.darkSection .sectionHeading h2,.darkSection .sectionHeading small,.darkSection .sectionHeading a{color:#fff8f0!important}
+.storySection{position:relative!important}
+.storySection:before{content:"TANISHA ETHNIC  •  AHMEDABAD";display:block;text-align:center;letter-spacing:.28em;font-size:10px;font-weight:800;color:#a77946;margin-bottom:16px}
+.storyCard{grid-template-columns:1.12fr .88fr!important;border-radius:32px!important;border:1px solid rgba(196,154,97,.48)!important;background:linear-gradient(135deg,#2f1b15,#4b2a1e)!important;box-shadow:0 32px 90px rgba(53,30,22,.24)!important}
+.storyCard>div:first-child{padding:64px 62px!important;background:linear-gradient(145deg,#2f1b15 0%,#45271c 60%,#5a3726 100%)!important}
+.storyCard>div:first-child>small{display:inline-flex!important;padding:7px 12px!important;border:1px solid rgba(216,174,114,.3)!important;border-radius:999px!important;background:rgba(255,255,255,.04)!important}
+.storyCard h2{font-size:clamp(40px,5vw,66px)!important;letter-spacing:-.035em!important}
+.storyCard p{max-width:620px!important}
+.storyCard .storyAddress{display:inline-block!important;padding:8px 13px!important;border-radius:999px!important;background:rgba(255,255,255,.06)!important;border:1px solid rgba(216,174,114,.22)!important}
+.storyCard>img{background:radial-gradient(circle at 50% 45%,#6a4630 0%,#3b231a 42%,#1f120e 100%)!important;padding:88px!important;object-fit:contain!important;filter:drop-shadow(0 24px 40px rgba(0,0,0,.25))!important}
+.storyHighlights span{backdrop-filter:blur(8px)!important}
+.storyCard .primaryBtn{padding:14px 24px!important;box-shadow:0 12px 28px rgba(0,0,0,.18)!important}
+.videoSection,.reviewsSection{background:#fff!important}
+@media(max-width:700px){
+  .heroSlider{border-radius:0 0 22px 22px!important}
+  .productGrid{gap:12px!important}
+  .storySection:before{font-size:8px;letter-spacing:.2em}
+  .storyCard{grid-template-columns:1fr!important;border-radius:24px!important}
+  .storyCard>div:first-child{padding:38px 24px 30px!important}
+  .storyCard h2{font-size:38px!important}
+  .storyCard>img{min-height:280px!important;height:280px!important;padding:52px!important}
+}
