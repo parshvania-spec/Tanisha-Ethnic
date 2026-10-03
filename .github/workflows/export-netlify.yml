@@ -1,0 +1,21 @@
+name: Export Netlify ZIP
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create Netlify ZIP
+        run: zip -r tanisha-ethnic-netlify.zip . -x ".git/*" ".github/*" "tanisha-ethnic-netlify.zip"
+      - name: Upload ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: tanisha-ethnic-netlify
+          path: tanisha-ethnic-netlify.zip
+          retention-days: 7
