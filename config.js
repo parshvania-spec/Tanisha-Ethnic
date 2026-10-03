@@ -59,7 +59,7 @@ const supabaseClient = (window.supabase && typeof window.supabase.createClient==
     if(p.image_url&&!a.includes(p.image_url))a.unshift(p.image_url);
     return a[0]||'product-placeholder.svg';
   };
-  const card=p=>`<article class="productCard"><div class="imageWrap"><img src="${esc(img(p))}" alt="${esc(p.name||'Product')}" loading="lazy" onerror="this.src='product-placeholder.svg'"></div><div class="cardBody"><small>${esc(p.category||'Ethnic Wear')}</small><h3>${esc(p.name||'Product')}</h3><div class="priceRow"><span class="price">₹${Number(p.price||0).toLocaleString('en-IN')}</span></div><p class="stock ${Number(p.stock||0)>0?'in':'out'}">${Number(p.stock||0)>0?`${Number(p.stock)} in stock`:'Ask availability'}</p></div></article>`;
+  const card=p=>`<article class="productCard" data-id="${esc(p.id)}" tabindex="0" role="button" aria-label="Open ${esc(p.name||'Product')}"><div class="imageWrap"><img src="${esc(img(p))}" alt="${esc(p.name||'Product')}" loading="lazy" onerror="this.src='product-placeholder.svg'"></div><div class="cardBody"><small>${esc(p.category||'Ethnic Wear')}</small><h3>${esc(p.name||'Product')}</h3><div class="priceRow"><span class="price">₹${Number(p.price||0).toLocaleString('en-IN')}</span></div><p class="stock ${Number(p.stock||0)>0?'in':'out'}">${Number(p.stock||0)>0?`${Number(p.stock)} in stock`:'Ask availability'}</p></div></article>`;
   async function fallback(){
     const status=document.getElementById('statusText');
     const grid=document.getElementById('productGrid');
