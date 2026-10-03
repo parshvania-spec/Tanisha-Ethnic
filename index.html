@@ -20,7 +20,7 @@
   <link rel="icon" type="image/png" href="favicon-192.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="preconnect" href="https://cxydymcjgxgcdqgltnii.supabase.co" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=46-premium-luxury"><link rel="stylesheet" href="premium-light.css?v=47-premium-luxury">
+  <link rel="stylesheet" href="styles.css?v=46-premium-luxury"><link rel="stylesheet" href="premium-light.css?v=48-premium-luxury">
   <style id="mobile-contact-overflow-fix">
     @media (max-width:600px){
       .contactStrip>a{min-width:0;overflow:hidden}
@@ -48,7 +48,7 @@
     "sameAs": ["https://www.instagram.com/tanisha.ethnic/"]
   }
   </script>
-</head>
+<style id="story-premium-v48">.storySection{background:linear-gradient(180deg,#fffdf9 0%,#f7ede3 100%)!important;padding-top:58px!important;padding-bottom:58px!important}.storyCard{max-width:1180px!important;margin:0 auto!important;display:grid!important;grid-template-columns:1.15fr .85fr!important;align-items:stretch!important;overflow:hidden!important;border:1px solid rgba(183,135,79,.24)!important;border-radius:28px!important;background:linear-gradient(135deg,#fffaf5,#f3e4d5)!important;box-shadow:0 24px 70px rgba(58,33,24,.12)!important;position:relative!important}.storyCard>div:first-child{padding:54px 56px!important;position:relative!important}.storyCard>div:first-child:before{content:"✦";position:absolute;top:28px;left:28px;color:#b7874f;font-size:22px}.storyCard>div:first-child>small{color:#a36f35!important;letter-spacing:.22em!important;font-weight:800!important}.storyCard h2{font-family:"Playfair Display",serif!important;color:#2b1b15!important;font-size:clamp(36px,4.5vw,58px)!important;line-height:1.02!important;margin:14px 0 20px!important;max-width:620px!important}.storyCard p{color:#624b3e!important;font-size:16px!important;line-height:1.75!important;max-width:650px!important}.storyHighlights{display:flex!important;flex-wrap:wrap!important;gap:10px!important;margin:26px 0 30px!important}.storyHighlights span{padding:9px 13px!important;border-radius:999px!important;background:#fff!important;border:1px solid rgba(183,135,79,.22)!important;color:#5b3c2c!important;font-size:12px!important;font-weight:700!important}.storyCard .primaryBtn{border-radius:12px!important;padding:13px 20px!important}.storyCard>img{width:100%!important;height:100%!important;min-height:390px!important;object-fit:cover!important;background:#050505!important;display:block!important;border-left:1px solid rgba(183,135,79,.16)!important}.modalCard{border:1px solid rgba(183,135,79,.25)!important;box-shadow:0 30px 90px rgba(20,10,5,.35)!important}.modalClose{position:absolute;right:14px;top:14px;width:42px;height:42px;border:1px solid rgba(183,135,79,.25);border-radius:50%;background:#fff;color:#3a2118;font-size:24px;z-index:5}.relatedProducts{margin-top:28px}.relatedGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}.relatedMini{display:grid;grid-template-columns:52px 1fr;gap:8px;align-items:center;padding:8px;border:1px solid #ead9ca;border-radius:12px;background:#fff}.relatedMini img{width:52px;height:64px;object-fit:cover;border-radius:8px}.relatedMini b{font-size:11px;display:block;line-height:1.25}.relatedMini span{font-size:12px;color:#8a5e3c}.zoomNav{position:fixed!important;top:50%!important;transform:translateY(-50%)!important;background:#fff!important;color:#3a2118!important}.zoomNav.prev{left:18px!important}.zoomNav.next{right:18px!important}.zoomCounter{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);color:#fff;background:#0008;padding:6px 10px;border-radius:20px;font-size:12px}.zoomOverlay .zoomCounter.hidden{display:none}.legacyCompat{display:none}@media(max-width:700px){.storySection{padding:34px 14px!important}.storyCard{grid-template-columns:1fr!important;border-radius:22px!important}.storyCard>div:first-child{padding:34px 24px 28px!important}.storyCard h2{font-size:34px!important}.storyCard p{font-size:14px!important;line-height:1.65!important}.storyCard>img{min-height:260px!important;height:260px!important;border-left:0!important;border-top:1px solid rgba(183,135,79,.16)!important;object-fit:contain!important}.relatedGrid{grid-template-columns:1fr!important}.modalCard{max-height:96vh!important}.gallery{padding:12px!important}.mainImageBox>img{height:330px!important}.productDetails{padding:22px!important}.productDetails h2{font-size:30px!important}}</style></head>
 <body>
   <div id="brandLoader" class="brandLoader" aria-hidden="true"><div class="loaderGlow"><img src="brand-round.png" alt=""><span></span></div></div><script>window.setTimeout(function(){var l=document.getElementById("brandLoader");if(l)l.classList.add("hide");},2500);</script>
   <svg class="svgSprite" aria-hidden="true" focusable="false">
@@ -118,7 +118,50 @@
 
   <div id="cartDrawer" class="cartDrawer" aria-hidden="true"><div class="cartPanel"><div class="panelHead"><h2>Your Cart</h2><button id="closeCart" aria-label="Close cart">×</button></div><div id="cartItems"></div><div class="cartFooter"><div><span>Total</span><strong id="cartTotal">₹0</strong></div><a id="checkoutWhatsApp" class="primaryBtn" target="_blank" rel="noopener">Order on WhatsApp</a></div></div></div>
   <div id="searchOverlay" class="searchOverlay hidden"><div class="searchPanel"><button id="closeSearch" aria-label="Close search">×</button><input id="searchOverlayInput" type="search" placeholder="Search products..."><div id="searchOverlayResults"></div></div></div>
-  <div id="productModal" class="modal hidden"><div class="modalBackdrop"></div><div class="modalCard"><button id="closeModal" class="modalClose">×</button><div id="modalBody"></div></div></div>
+  <div id="productModal" class="modal hidden" aria-hidden="true">
+  <div class="modalBackdrop"></div>
+  <div class="modalCard">
+    <button id="closeModal" class="modalClose" aria-label="Close product">×</button>
+    <div class="gallery">
+      <div class="mainImageBox">
+        <img id="modalImage" src="product-placeholder.svg" alt="Product">
+        <button id="zoomBtn" class="zoomBtn" type="button">⌕ Zoom</button>
+      </div>
+      <div id="thumbs" class="thumbs"></div>
+    </div>
+    <div class="productDetails">
+      <small id="modalCategory">ETHNIC WEAR</small>
+      <h2 id="modalName">Product</h2>
+      <div class="modalPriceRow"><h3 id="modalPrice">₹0</h3><del id="modalMrp"></del><span id="modalDiscount"></span></div>
+      <p id="modalDescription">Premium ethnic wear by Tanisha Ethnic.</p>
+      <div class="detailGrid">
+        <p><b>Design</b><span id="modalDesign">—</span></p>
+        <p><b>Sizes</b><span id="modalSizes">Ask on WhatsApp</span></p>
+        <p><b>Colours</b><span id="modalColors">Ask on WhatsApp</span></p>
+        <p><b>Fabric</b><span id="modalFabric">Premium fabric</span></p>
+        <p><b>Work</b><span id="modalWork">Premium detailing</span></p>
+        <p><b>Wash Care</b><span id="modalWash">Gentle hand wash / dry clean</span></p>
+        <p><b>Stock</b><span id="modalStock">Ask availability</span></p>
+        <p><b>Delivery</b><span id="modalDelivery">—</span></p>
+      </div>
+      <div class="modalActions">
+        <button id="wishlistModal" class="secondaryBtn wishlistAction" type="button">♡ Wishlist</button>
+        <button id="shareProduct" class="secondaryBtn" type="button">↗ Share</button>
+        <button id="modalCart" class="primaryBtn" type="button">Add to Cart</button>
+        <a id="modalOrder" class="primaryBtn" target="_blank" rel="noopener">Order on WhatsApp</a>
+      </div>
+      <div class="relatedProducts"><small>YOU MAY ALSO LIKE</small><div id="relatedGrid" class="relatedGrid"></div></div>
+    </div>
+  </div>
+</div>
+<div id="zoomOverlay" class="zoomOverlay" aria-hidden="true">
+  <button id="closeZoom" aria-label="Close zoom">×</button>
+  <button id="zoomPrev" class="zoomNav prev" type="button">‹</button>
+  <img id="zoomImage" src="product-placeholder.svg" alt="Product zoom">
+  <button id="zoomNext" class="zoomNav next" type="button">›</button>
+  <span id="imageCounter" class="zoomCounter">1 / 1</span><span id="zoomCounter" class="zoomCounter hidden">1 / 1</span>
+</div>
+  <div id="legacyCompat" hidden><div id="couponInput"></div><div id="videoInstagramCta"></div><div id="footerStore"></div><div id="recommendGrid"></div><div id="instagramGrid"></div><div id="clearWishlist"></div><div id="cartSubtotal"></div><div id="cartDiscountRow"></div><div id="cartDiscount"></div><div id="couponStatus"></div><div id="bottomCartCount"></div><div id="clearCart"></div><div id="checkoutWa"></div><div id="cartBackdrop"></div><div id="bottomCart"></div><div id="bottomSearch"></div><div id="modalHome"></div><div id="applyCoupon"></div><div id="trackingForm"></div><div id="festivalTitle"></div><div id="festivalText"></div><div id="festivalPopup"></div><div id="closeFestival"></div><div id="festivalShop"></div></div>
   <div id="toast" class="toast" role="status"></div>
   <script src="config.js"></script><script src="menu.js"></script><script src="app.js"></script>
 </body>
