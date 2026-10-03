@@ -288,3 +288,15 @@ button.primaryBtn,.primaryBtn{box-shadow:0 8px 20px rgba(58,33,24,.10)}
  .videoGrid{grid-template-columns:1fr!important}
  .videoCard{max-width:100%!important}
 }
+
+/* V45 fashion-store navigation */
+.fashionQuickNav{display:flex;gap:0;overflow:auto;white-space:nowrap;background:#fff;border-bottom:1px solid rgba(74,48,37,.10);scrollbar-width:none;position:sticky;top:0;z-index:20}
+.fashionQuickNav::-webkit-scrollbar{display:none}
+.fashionQuickNav a{padding:13px 20px;color:#3a2118;text-decoration:none;font-size:13px;font-weight:700;border-right:1px solid rgba(74,48,37,.08)}
+.fashionQuickNav a:hover{background:#faf2e9}
+@media(max-width:600px){
+ .fashionQuickNav a{padding:11px 14px;font-size:12px}
+ .siteHeader{position:sticky!important;top:0!important;z-index:30}
+ .contactStrip{display:none!important}
+ .heroSlider{margin-top:0}
+}
