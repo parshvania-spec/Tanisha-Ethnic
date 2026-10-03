@@ -87,3 +87,180 @@ button.primaryBtn,.primaryBtn{box-shadow:0 8px 20px rgba(58,33,24,.10)}
 #bestGrid .productCard:first-child .cardActions{margin-top:auto}
 @media(max-width:900px){#bestGrid{grid-template-columns:repeat(2,minmax(0,1fr))}#bestGrid .productCard:first-child{grid-column:span 2;grid-template-columns:1fr 1fr}}
 @media(max-width:600px){#bestGrid .productCard:first-child{grid-column:span 2;display:block}#bestGrid .productCard:first-child .imageWrap>img{min-height:0;aspect-ratio:3/4}#bestGrid .productCard:first-child .cardBody{padding:15px}#bestGrid .productCard:first-child .cardBody h3{font-size:19px}}
+
+
+/* ===== V43 CLEAN PREMIUM MOBILE POLISH ===== */
+.heroSlider{
+  min-height:560px;
+  overflow:hidden;
+}
+.heroSlider .slide{
+  min-height:560px;
+}
+.sectionHeading h2,.shopHead h2{
+  font-family:'Playfair Display',serif;
+}
+.categories,.fabricSection{
+  background:#fffdf9 !important;
+}
+.categories #categoryButtons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  justify-content:center;
+}
+.categories #categoryButtons button,
+.fabricButtons button{
+  border:1px solid rgba(183,135,79,.22) !important;
+  background:#fff !important;
+  color:#4b3328 !important;
+  border-radius:999px !important;
+}
+.categories #categoryButtons button.active,
+.fabricButtons button.active{
+  background:#3a2118 !important;
+  color:#fff !important;
+  border-color:#3a2118 !important;
+}
+.shopSection{
+  background:linear-gradient(180deg,#fffdf9 0%,#faf2e9 100%) !important;
+}
+.filters input,.filters select{
+  background:#fff !important;
+  border-color:rgba(183,135,79,.22) !important;
+}
+.productCard .cardBody{
+  background:#fff !important;
+}
+.productCard .cardActions .primaryBtn{
+  background:#3a2118 !important;
+}
+.darkSection{
+  background:linear-gradient(135deg,#3a2118,#5a3825) !important;
+}
+.darkSection .sectionHeading h2,
+.darkSection .sectionHeading small,
+.darkSection .sectionHeading a{
+  color:#fff !important;
+}
+@media(max-width:600px){
+  .heroSlider,.heroSlider .slide{
+    min-height:360px !important;
+    height:360px !important;
+  }
+  .heroSlider .slide{
+    padding:28px 18px 52px !important;
+    grid-template-columns:minmax(0,1.08fr) minmax(105px,.72fr) !important;
+  }
+  .heroSlider .slide h1{
+    font-size:36px !important;
+    line-height:1.02 !important;
+    margin:8px 0 !important;
+  }
+  .heroSlider .slide p{
+    font-size:13px !important;
+    line-height:1.45 !important;
+  }
+  .heroSlider .slideVisual{
+    height:220px !important;
+  }
+  .heroSlider .slideVisual img{
+    max-height:220px !important;
+  }
+  .heroSlider .heroGlow{
+    width:180px !important;
+    height:180px !important;
+  }
+  .heroSlider .heroActions{
+    margin-top:14px !important;
+    gap:8px !important;
+  }
+  .heroSlider .heroActions .primaryBtn{
+    padding:10px 13px !important;
+    font-size:12px !important;
+  }
+  .heroSlider .heroLink{
+    font-size:11px !important;
+  }
+  .heroSlider .sliderBtn{
+    width:36px !important;
+    height:36px !important;
+    bottom:42px !important;
+  }
+  .heroSlider .slideDots{
+    bottom:12px !important;
+  }
+  .trustRow{
+    grid-template-columns:repeat(2,1fr) !important;
+    gap:0 !important;
+  }
+  .trustRow>div{
+    padding:14px 8px !important;
+  }
+  .section{
+    padding:34px 14px !important;
+  }
+  .sectionHeading h2,.shopHead h2{
+    font-size:26px !important;
+  }
+  #newGrid,#bestGrid,#trendingGrid,#productGrid,#recentGrid,#wishlistGrid,#recommendGrid{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:12px !important;
+  }
+  .productCard{
+    border-radius:14px !important;
+    overflow:hidden !important;
+  }
+  .productCard .imageWrap{
+    aspect-ratio:3/4 !important;
+  }
+  .productCard .cardBody{
+    padding:11px !important;
+  }
+  .productCard .cardBody h3{
+    font-size:14px !important;
+    line-height:1.25 !important;
+    margin:5px 0 !important;
+  }
+  .productCard .price{
+    font-size:15px !important;
+  }
+  .productCard .cardRating,.productCard .stock{
+    font-size:10px !important;
+  }
+  .productCard .cardActions{
+    grid-template-columns:1fr !important;
+    gap:6px !important;
+  }
+  .productCard .cardActions .secondaryBtn,
+  .productCard .cardActions .primaryBtn,
+  .productCard .addCartBtn{
+    width:100% !important;
+    min-height:36px !important;
+    padding:8px 7px !important;
+    font-size:11px !important;
+  }
+  #bestGrid .productCard:first-child{
+    grid-column:span 2 !important;
+  }
+  .filters{
+    grid-template-columns:1fr 1fr !important;
+    gap:8px !important;
+  }
+  .filters input{
+    grid-column:1/-1 !important;
+    min-width:0 !important;
+    width:100% !important;
+  }
+  .filters select{
+    min-width:0 !important;
+    width:100% !important;
+  }
+  #festivalPopup{
+    display:none !important;
+  }
+  .darkSection{
+    border-radius:18px !important;
+    margin:0 10px !important;
+  }
+}
