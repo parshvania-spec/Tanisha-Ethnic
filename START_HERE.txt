@@ -1,13 +1,1 @@
-TANISHA ETHNIC V40 FINAL LAUNCH UI
-
-1. GitHub repository root me is folder ki SAARI files upload/replace karein.
-2. Commit message: Tanisha Ethnic V40 final launch
-3. Netlify Published hone ka wait karein.
-4. Chrome > Site settings > tanishaethnics.netlify.app > Clear & reset.
-5. Website open karein: /?v40=1
-6. Admin open karein: /admin.html?v40=1
-
-IMPORTANT
-- Supabase project: cxydymcjgxgcdqgltnii
-- setup.sql dobara run karna safe hai, lekin products table abhi empty hai; products admin se naye add karein.
-- Same coupon code dobara save karne par ab existing coupon update hoga.
+Tanisha Ethnic — August 24, 2026 snapshot export.
