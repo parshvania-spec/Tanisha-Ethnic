@@ -1,0 +1,21 @@
+name: Export August 24 ZIP
+
+on:
+  push:
+    branches: [zip-export-aug24]
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create August 24 ZIP
+        run: zip -r tanisha-ethnic-aug24.zip . -x ".git/*" ".github/*" "tanisha-ethnic-aug24.zip"
+      - name: Upload ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: tanisha-ethnic-aug24
+          path: tanisha-ethnic-aug24.zip
+          retention-days: 7
