@@ -1,0 +1,19 @@
+name: Export old website ZIP
+on:
+  push:
+    branches:
+      - restore-old-website-2026-08-15
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create ZIP
+        run: |
+          rm -rf .git
+          zip -qr ../Tanisha-Ethnic-OLD-15-Aug-2026.zip .
+      - name: Upload ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: Tanisha-Ethnic-OLD-15-Aug-2026
+          path: ../Tanisha-Ethnic-OLD-15-Aug-2026.zip
